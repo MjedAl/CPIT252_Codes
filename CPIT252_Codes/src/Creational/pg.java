@@ -9,7 +9,8 @@ public class pg {
     public static void main(String[] args) {
         // TODO code application logic here
         //singleton();
-        prototybe();
+        //prototybe();
+        builder();
     }
 
     private static void singleton() {
@@ -31,12 +32,21 @@ public class pg {
         Sheep katheri = new Sheep("red");
         System.out.println(katheri.hashCode());
         System.out.println(katheri);
-        
+
         // Cloning the object
         Sheep clonedKatheri = (Sheep) animalCloner.getClone(katheri);
         System.out.println(clonedKatheri.hashCode());
         System.out.println(clonedKatheri);
         // Diffrent hash codes == two diffrent object but they are clonned and have same attrubutes
+    }
+
+    private static void builder() {
+        PizzaBuilder pb = new PizzaBuilder();
+        pb.createNewPizzaProduct();
+        pb.buildDough();
+        pb.buildSauce();
+        pb.buildTopping();
+        System.out.println(pb.getPizza());
     }
 
 }
